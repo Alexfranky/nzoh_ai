@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+body, html {
+  margin-top: 30px;
+}
+title {
+  font-style: italic;
+  
+}
+#app {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#chat_container {
+  flex: 1;
+  width: 100%;
+  height: fit-content;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 15px;
+}
+
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  background: rgb(0, 70, 100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai .profile {
+  background:#04669a;
+  font-size: x-large;
+}
+
+.profile img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.message {
+  flex: 1;
+
+  color: #dcdcdc;
+  font-size: 20px;
+
+  max-width: 100%;
+  overflow-x: scroll;
+
+color:whitesmoke;
+  white-space: pre-wrap; 
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+form {
+  width: 100%;
+  margin-top:90px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5px;
+  font-size:1.5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+textarea {
+  width: 100%;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 5px;
+  background: transparent;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-style:normal;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+form img {
+  width: 30px;
+  height: 30px;
+}
+
+
+@media (max-width:900px) { 
+  body, html {
+      text-align: center;
+      font-size: 0.5rem;
+      position: relative;
+      padding-top: 20px;
+  }
+  form {
+    text-align: center;
+    border-left: 100px; 
+    border-right: 100px ;
+    position: relative;
+    font-size: 2rem;
+    border-radius: 3%;
+    color: whitesmoke;
+    margin-top: 40px;
+  }
+  textarea{
+    font-size: 2rem;
+    color: whitesmoke;
+  }
+  #app {
+    width: 100vw;
+    height: 100vh;
+    position: static;
+    text-align: left;
+
+  } 
+}

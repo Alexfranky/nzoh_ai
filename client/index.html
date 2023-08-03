@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="https://img.icons8.com/?size=512&id=gGzKQpIO0LTx&format=png" />
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="chat.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" 
+  rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" 
+  crossorigin="anonymous">
+  <title>Assistant Nzoh</title>
+  <style>
+  body,html{
+      background-color:#2e9ab3;
+      color: whitesmoke;
+        }
+  form {
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 3%;
+    color: black;
+    margin-top: 120px;
+  }
+  #chat_container {
+  flex: 1;
+  width: 100%;
+  height: fit-content;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+  @media (max-width:900px) { 
+  form {
+    text-align: center;
+    font-size: 1.5rem;
+    border-radius: 3%;
+    color: black;
+    margin-top: 90px;
+  }
+  
+  #chat_container {
+  flex: 1;
+  width: 100%;
+  height: fit-content;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}}
+  </style>
+  
+</head>
+ <body class="mt-0 pt-0 mb-0 pb-0">
+    <nav style="background-color: #008CBA;" class="flex items-center justify-between w-100 fixed-top pt-2 pb-2 text-center mx-auto">
+      <div style="float: right;color: whitesmoke;font-size: larger;padding-top: 5px;padding-bottom: 5px;font-size: medium;padding-right: 15px;">
+        <a style="margin-left: 15px;margin-right: 15px;font-size: large; float: left;" class="text-warning">Assistant des apprenants Nzoh</a>
+      </div> 
+      <div style="float: right;color: whitesmoke;font-size: larger;padding-top: 5px;padding-bottom: 5px;font-size: medium;padding-right: 15px;">
+        <a style="margin-left: 15px;margin-right: 15px;font-size: large;" type="button" onclick="clearBox('chat_container')">Effacer</a>
+      </div>        
+        </div>
+      </nav>
+
+  <main  class="p-3">
+    <div class="p-3" id="app">
+        <div style="font-size: medium;"  class="mt-5 pt-4 text-start pe-2" id="chat_container"></div>
+  
+  <div class="">
+  <form style="background-color: rgb(175, 231, 246);margin-top: 65px;" method="POST" class="mx-auto col-11 fixed-top mx-auto container-fluid rounded-bottom-3 rounded-top-3">
+        <textarea  class="text-dark text-center pt-2" name="prompt" rows="1" cols="1" placeholder="posez votre question ici ..."></textarea>
+        <button class='text-info'  style="height: 35px; width: 50px;"  type="submit"><img src="assets/send.svg" alt="send" />
+        <div class="mx-auto fixed-top col-12 tc">
+        </div>
+      </form>
+    </div>
+  <script type="text/javascript">
+    function clearBox(chat_container)
+    {
+        document.getElementById('chat_container').innerHTML = "";
+    }
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
