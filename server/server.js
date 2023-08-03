@@ -18,7 +18,7 @@ app.use(express.json())
 
 app.get('/', async (req, res) => {
   res.status(200).send({
-    message: 'Votre assistant caphss vous salut!!!'
+    message: 'Votre assistant des jeunes du village Nzoh vous salut!!!'
   })
 })
 
