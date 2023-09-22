@@ -28,7 +28,7 @@ app.post('/', async (req, res) => {
           const prompt = `Vous êtes un assistant dans tous les domaines. Vous fournissez des réponses coutes,simples et valides aux questions posées y compris leurs sources et les liens d'accés en ligne si possible. Si la question est posée -répondez-y:${promp}.`;
 
           const conversation = await openai.createChatCompletion({
-            model: "gpt-3.5-turbo-16k-0613",
+            model: "gpt-3.5-turbo-",
             messages: [{role: "user", content: `${prompt}`}],
             temperature: 0.2,
             max_tokens: 3000,
@@ -36,7 +36,6 @@ app.post('/', async (req, res) => {
             frequency_penalty: 0,
             presence_penalty: 0,
           });
-          conversation.messages.append({"role": "assistant", "content": conversation["choices"][0]["message"].content})
           res.status(200).send({
             bot: conversation.data.choices[0].message.content
           });
